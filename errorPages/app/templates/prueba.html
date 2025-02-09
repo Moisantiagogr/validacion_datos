@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--- Como mostrar onformacion qe viene desde el back -->
+
+    {% if objeto %}
+    <!--- todo lo que esta aqui se va a pintar --->
+    <h1>{{objeto.id}} - {{ objeto.titulo }}</h1>
+    <p> {{objeto.descripcion}}</p>
+    {% endif %}
+
+    {% if arreglo %}
+    <ul>
+        {% for objeto in arreglo %}
+        <li>{{objeto.titulo}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form>
+        <input type="text" name="texto" placeholder="Ingrrese Texto">
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if lista %}
+
+    <ul>
+        {% for persona in lista%}
+        <li>{{persona.nombres}} {{persona.apellidos}} {{persona.edad}}</li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+</body>
+
+</html>
